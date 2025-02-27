@@ -11,5 +11,5 @@ public class Calculator {
     public UnaryOperator<Integer> pow = x -> x * x;
     public UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
     public Predicate<Integer> isPositive = x -> x > 0;
-    public Consumer<Integer> println = System.out::println;
+    public static Consumer<Integer> println = System.out::println;
 }

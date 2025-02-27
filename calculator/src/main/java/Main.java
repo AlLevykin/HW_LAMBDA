@@ -1,6 +1,5 @@
 package main.java;
 
-import java.util.function.Consumer;
 import netology.Calculator;
 
 public class Main {
@@ -8,8 +7,14 @@ public class Main {
         Calculator calc = Calculator.instance.get();
         int a = calc.plus.apply(1, 2);
         int b = calc.minus.apply(2, 1);
-        int c = calc.divide.apply(a, b);
-        Consumer<Integer> p = calc.println;
-        p.accept(c);
+        int c;
+        try {
+            c = calc.divide.apply(a, b);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+        Calculator.println.accept(c);
     }
 }
